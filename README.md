@@ -3,7 +3,7 @@
 Go build dockerfile
 
 ## Setup
-1. copy Dockerfile into your project: `curl -O https://raw.githubusercontent.com/excelWithBusiness/Devops-Config/master/Dockerfile`
+1. copy Dockerfile into your project: `curl -O https://raw.githubusercontent.com/excelWithBusiness/go-build/master/Dockerfile`
 2. Set your build arguments and build image:
 ```
 docker build \
