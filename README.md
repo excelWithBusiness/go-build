@@ -13,3 +13,6 @@ docker build \
 --build-arg PROJECT_REPOSITORY="github.com/excelWithBusiness/${PROJECT_NAME}" \
 -t ${TAG}:latest .
 ```
+
+## TODO
+- Switch to tokens for git credentials via .netrc
