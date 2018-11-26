@@ -26,4 +26,11 @@ RUN echo ${GIT_CREDENTIAL} > .git-credential \
 # Clean up
 RUN rm .git-credential && rm -rf .git
 
-CMD ["/bin/sh", "-c", "${PROJECT_PATH}/dist/${PROJECT_NAME}"]
+# SecretsManagement stuffs
+RUN curl -O https://s3-eu-west-1.amazonaws.com/filtered-sec-public/secretsmanagement/v0.1/ssm-entrypoint.sh && \
+    chmod +x ./ssm-entrypoint.sh
+CMD ["./ssm-entrypoint.sh", "/bin/sh", "-c", "${PROJECT_PATH}/dist/${PROJECT_NAME}"]
+
+
+
+#CMD ["/bin/sh", "-c", "${PROJECT_PATH}/dist/${PROJECT_NAME}"]
