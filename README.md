@@ -7,7 +7,9 @@ Go build base Dockerfile
 Previously, was versioned as 0.0.1 and v0.0.2, new convention:
 
 `<golangver>-<iteration>`
-examples: ```
+
+examples:
+```
 1.9-1
 1.9-2
 1.8-1
