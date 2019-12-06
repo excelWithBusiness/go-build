@@ -5,13 +5,14 @@ ARG PROJECT_BUILD
 ARG PROJECT_NAME
 ARG PROJECT_REPOSITORY
 
+# Load dependencies (before setting args/copying)
+RUN go get -u github.com/kardianos/govendor \
+    && go get -u github.com/golang/dep/cmd/dep
+
+
 ENV PROJECT_BUILD=${PROJECT_BUILD}
 ENV PROJECT_NAME=${PROJECT_NAME}
 ENV PROJECT_PATH=/go/src/${PROJECT_REPOSITORY}
-
-# Load dependencies
-RUN go get -u github.com/kardianos/govendor \
-    && go get -u github.com/golang/dep/cmd/dep
 
 COPY . ${PROJECT_PATH}
 
