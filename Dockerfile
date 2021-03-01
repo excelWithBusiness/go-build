@@ -9,7 +9,7 @@ ENV PROJECT_BUILD=${PROJECT_BUILD}
 ENV PROJECT_NAME=${PROJECT_NAME}
 
 RUN apk add --no-cache \
-		nc
+		netcat-openbsd
 
 COPY . /app
 
